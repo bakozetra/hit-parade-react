@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "name": "Poopy",
+    "title": "Vavaka",
+    "isFavorite": "false",
+    "like": "2",
+    "unlike": "2",
+    "style" : "pop",
+    "lyrucs": "Na sarotra ny lalana haleha Tsy hahasakana ahy tsy handeha Na enjika, na latsa eso koa Tsy mampaninona Navesatra ny efa nentiko Toky foana no nasetriko Tsy taitra aho f’ireo izay ratsy loha Sa nampivadi-po Ho tsinotsinona Tompo o! ankiniko aminao Ny fiainako sy izay rehetra mikasika ahy Aoka Ianao hitantana tsy handao N’inon’inona hanjo Na ho sarotra tokoa Matoky Anao aho ka tsy manahy Matoky Anao izahay Miandry ny marina Fantatray ianao fa tsy miangatra Tompo o! miandrandra anao izahay Miandry ny rariny Tsy manahy ny fanahy manana Anao. Tsiky dia ampy"
+  },
+  {
+    "id": "2",
+    "name": "Bodo",
+    "title": "Ankino",
+    "isFavorite": "false",
+    "like": "2",
+    "unlike": "2",
+    "style" : "slow",
+    "lyrucs": "Misy olona mitomany Hitanao any ho any Mahatsiaro ho resin’ny fiainana Ka velona ny taraina Mahatsiaro ho potraka tokoa Nefa atao ahoana moa Izay angamba no anjaranao Sa ny vintana no tsy tao Iza no ahalala ny ratsy vitanao ety an-tany Misafidy foana ianao Ho velona sa ho faty Mahatsiaro ho potraka tokoa Nefa atao ahoana moa K’aza kivy toa izao Andriamanitra anie homba anao Ankino tanteraka Fa aza manaiky ho reraka Ho tafita foana ianao Rehefa ao ilay Tompo Andriamanitrao F’Izy no manampy anao Rehefa manatona Azy ianao Satria ny Ray, Ray, Ray Mahavitra ny tsirairay"
+  },
+  {
+    "id": "3",
+    "name": "Lola",
+    "title": "Hametrska hevitra",
+    "isFavorite": "false",
+    "like": "2",
+    "unlike": "2",
+    "style" : "slow",
+    "lyrucs": "ref :N’iza (2) izy olon’ambony         n’iza (2) olona mana-mbola         fa malemy hatrany be dia be ireo mitomany         fa mbola ampijalin’io fitiavana io Tsy hay ferina raha io fitiavana io na tsy hisoka-bava aza na koa hisaron-tava ny fihetsika ihany dia manambara Ny zava-misy toa mifanohitra fa ny tsiky indray nandositra toa tsy mihery toa mangovitra ny any anaty tsy miovitra Tsy voafetra ny herin’ny fitivana tsy vitsy ny mifankatia nefa mpihavana tsy hay nanarina lalim-paka loatra angamba sa adalana Na aizim-pito na alaviran-tany tsy rarahina fa mamikiviky hatrany lavitry ny fitaintainana matoky ny fisainana "
+  }
+]

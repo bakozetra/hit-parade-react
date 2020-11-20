@@ -1,0 +1,31 @@
+ul {
+  display: flex;
+}
+li {
+  list-style: none;
+  padding-right: 2rem;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
+
+.popular-song {
+  display: flex;
+  width: 860px;
+   height: 100px;
+   max-width: 100%;
+   background: #272343;
+   margin-bottom: 1rem;
+   color: white;
+   justify-content: space-between;
+
+}
+button {
+  border: none;
+  background: #272343;
+  outline: none;
+  color: white;
+}
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
