@@ -6,9 +6,9 @@ import Add from './pages/Add'
 import Popular from './pages/popular'
 import Style from './pages/Style'
 import Lyrucs from './pages/Lyrucs'
-
+import StyleComponent from './component/StyleComponent'
+import StyleName from './component/styleName'
 function App() {
-
   return (
     <div>
       <Header />
@@ -28,8 +28,10 @@ function App() {
         <Route path ="/lyrucs">
           <Lyrucs/>
         </Route>
+        <Route path="/styleName/:styleNames">
+          <StyleName/>
+        </Route>
       </Switch>
-
     </div>
   )
 }

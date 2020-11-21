@@ -1,9 +1,10 @@
 import React from 'react'
+import AddComponent from '../component/AddComponent'
 
 function Add() {
   return (
     <div>
-      <p>I am add</p>
+     <AddComponent/>
     </div>
   )
 }

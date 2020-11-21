@@ -27,5 +27,12 @@ button {
   outline: none;
   color: white;
 }
+form {
+  display: flex;
+  flex-direction: column;
+}
+form input {
+  margin-bottom: 1rem;
+}
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */
