@@ -11,7 +11,7 @@ function StyleComponent({song }) {
       {song.map((style , id) => {
         return (
           <Link to = {`/styleName/${style}`}key={id}>
-            <p>{style}</p>
+            <p className="style"> 🎧{style}</p>
           </Link>)
       })}
     </div>

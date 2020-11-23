@@ -15,7 +15,7 @@ function styleName() {
           return (
             <div key={song.id}>
               <Link to="/lyrucs" onClick={() => ShowLyrucs(song)}>
-                <div>
+                <div className='songLyrics'>
                   <h2>{song.title}</h2>
                   <p>{song.name}</p>
                 </div></Link>

@@ -33863,7 +33863,7 @@ module.exports = [{
   "price": "1000",
   "unlike": "2",
   "style": "pop",
-  "lyrics": "Na sarotra ny lalana haleha Tsy hahasakana ahy tsy handeha Na enjika, na latsa eso koa Tsy mampaninona Navesatra ny efa nentiko Toky foana no nasetriko Tsy taitra aho f’ireo izay ratsy loha Sa nampivadi-po Ho tsinotsinona Tompo o! ankiniko aminao Ny fiainako sy izay rehetra mikasika ahy Aoka Ianao hitantana tsy handao N’inon’inona hanjo Na ho sarotra tokoa Matoky Anao aho ka tsy manahy Matoky Anao izahay Miandry ny marina Fantatray ianao fa tsy miangatra Tompo o! miandrandra anao izahay Miandry ny rariny Tsy manahy ny fanahy manana Anao. Tsiky dia ampy"
+  "lyrics": "\n    Na sarotra ny lalana haleha \n    Tsy hahasakana ahy tsy handeha \n    Na enjika, na latsa eso koa \n    Tsy mampaninona \n    Navesatra ny efa nentiko Toky foana no nasetriko Tsy taitra aho f\u2019ireo izay ratsy loha Sa nampivadi-po Ho tsinotsinona Tompo o! ankiniko aminao Ny fiainako sy izay rehetra mikasika ahy Aoka Ianao hitantana tsy handao N\u2019inon\u2019inona hanjo Na ho sarotra tokoa Matoky Anao aho ka tsy manahy Matoky Anao izahay Miandry ny marina Fantatray ianao fa tsy miangatra Tompo o! miandrandra anao izahay Miandry ny rariny Tsy manahy ny fanahy manana Anao. Tsiky dia ampy"
 }, {
   "id": "2",
   "name": "Bodo",
@@ -33873,7 +33873,7 @@ module.exports = [{
   "price": "1000",
   "unlike": "2",
   "style": "slow",
-  "lyrics": "Misy olona mitomany Hitanao any ho any Mahatsiaro ho resin’ny fiainana Ka velona ny taraina Mahatsiaro ho potraka tokoa Nefa atao ahoana moa Izay angamba no anjaranao Sa ny vintana no tsy tao Iza no ahalala ny ratsy vitanao ety an-tany Misafidy foana ianao Ho velona sa ho faty Mahatsiaro ho potraka tokoa Nefa atao ahoana moa K’aza kivy toa izao Andriamanitra anie homba anao Ankino tanteraka Fa aza manaiky ho reraka Ho tafita foana ianao Rehefa ao ilay Tompo Andriamanitrao F’Izy no manampy anao Rehefa manatona Azy ianao Satria ny Ray, Ray, Ray Mahavitra ny tsirairay"
+  "lyrics": "Misy olona mitomany\n     Hitanao any ho any \n     Mahatsiaro ho resin\u2019ny fiainana \n     Ka velona ny taraina \n     Mahatsiaro ho potraka tokoa \n     Nefa atao ahoana moa \n     Izay angamba no anjaranao \n     Sa ny vintana no tsy tao \n     Iza no ahalala ny ratsy vitanao ety an-tany\n      Misafidy foana ianao \n      Ho velona sa ho faty \n      Mahatsiaro ho potraka tokoa \n      Nefa atao ahoana moa \n      K\u2019aza kivy toa izao \n      Andriamanitra anie homba anao \n      Ankino tanteraka \n      Fa aza manaiky ho reraka \n      Ho tafita foana   \n      ianao Rehefa ao ilay \n      Tompo Andriamanitrao \n      F\u2019Izy no manampy anao \n      Rehefa manatona Azy ianao \n      Satria ny Ray, Ray, Ray Mahavitra ny tsirairay"
 }, {
   "id": "3",
   "name": "Lola",
@@ -33883,7 +33883,7 @@ module.exports = [{
   "price": "1000",
   "unlike": "2",
   "style": "slow",
-  "lyrics": "ref :N’iza (2) izy olon’ambony         n’iza (2) olona mana-mbola         fa malemy hatrany be dia be ireo mitomany         fa mbola ampijalin’io fitiavana io Tsy hay ferina raha io fitiavana io na tsy hisoka-bava aza na koa hisaron-tava ny fihetsika ihany dia manambara Ny zava-misy toa mifanohitra fa ny tsiky indray nandositra toa tsy mihery toa mangovitra ny any anaty tsy miovitra Tsy voafetra ny herin’ny fitivana tsy vitsy ny mifankatia nefa mpihavana tsy hay nanarina lalim-paka loatra angamba sa adalana Na aizim-pito na alaviran-tany tsy rarahina fa mamikiviky hatrany lavitry ny fitaintainana matoky ny fisainana "
+  "lyrics": "\n    ref :N\u2019iza (2) izy olon\u2019ambony         \n    n\u2019iza (2) olona mana-mbola         \n    fa malemy hatrany be dia be ireo mitomany         \n    fa mbola ampijalin\u2019io fitiavana io \n    Tsy hay ferina raha io fitiavana io na \n    tsy hisoka-bava aza na \n    koa hisaron-tava ny fihetsika ihany \n    dia manambara \n    Ny zava-misy toa mifanohitra \n    fa ny tsiky indray nandositra \n    toa tsy mihery toa mangovitra ny any anaty tsy miovitra \n    Tsy voafetra ny herin\u2019ny fitivana \n    tsy vitsy ny mifankatia nefa mpihavana \n    tsy hay nanarina lalim-paka loatra angamba sa adalana \n    Na aizim-pito na alaviran-tany tsy rarahina \n    fa mamikiviky hatrany lavitry ny \n    fitaintainana matoky ny fisainana "
 }];
 },{}],"Context.js":[function(require,module,exports) {
 "use strict";
@@ -33955,6 +33955,14 @@ function ContextProvider(props) {
       songStyle = _useState8[0],
       setSongStyle = _useState8[1];
 
+  (0, _react.useEffect)(function () {
+    var lsSongs = JSON.parse(localStorage.getItem('allSong'));
+    lsSongs ? setAllSong(lsSongs) : setAllSong(_song.default);
+  }, []);
+  (0, _react.useEffect)(function () {
+    localStorage.setItem('allSong', JSON.stringify(allSong));
+  }, [allSong]);
+
   function getSong() {
     setAllSong(_song.default);
     console.log(allSong);
@@ -33976,16 +33984,18 @@ function ContextProvider(props) {
     });
   }
 
-  function toggleLyrucs(id) {
-    var ArrayLyrucs = allSong.map(function (song) {
-      if (song.id === id) {
-        return _objectSpread(_objectSpread({}, song), {}, {
-          isFavorite: !song.isFavorite
+  function favoriteSong(songId) {
+    var ArrayLyrucs = allSong.map(function (newSong) {
+      if (newSong.id === songId) {
+        return _objectSpread(_objectSpread({}, newSong), {}, {
+          isFavorite: !newSong.isFavorite
         });
-        return song;
       }
+
+      return newSong;
     });
     setAllSong(ArrayLyrucs);
+    console.log(songId);
   }
 
   function filterSong(song) {
@@ -34016,7 +34026,6 @@ function ContextProvider(props) {
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
     value: {
       allSong: allSong,
-      toggleLyrucs: toggleLyrucs,
       addToCart: addToCart,
       cartItems: cartItems,
       songLyrics: songLyrics,
@@ -34025,7 +34034,8 @@ function ContextProvider(props) {
       ShowLyrucs: ShowLyrucs,
       filterSong: filterSong,
       StyleSong: StyleSong,
-      setAllSong: setAllSong
+      setAllSong: setAllSong,
+      favoriteSong: favoriteSong
     }
   }, props.children);
 }
@@ -34044,15 +34054,17 @@ var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function header() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "I love it"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Hit Parad"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement("ul", {
+    className: "menu"
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, /*#__PURE__*/_react.default.createElement("li", null, "Ppular Songs")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, /*#__PURE__*/_react.default.createElement("li", null, "\uD83D\uDD25Popular Songs")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/style"
-  }, /*#__PURE__*/_react.default.createElement("li", null, "Styles")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, /*#__PURE__*/_react.default.createElement("li", null, "\uD83D\uDC97Styles")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/add"
-  }, /*#__PURE__*/_react.default.createElement("li", null, "Add")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, /*#__PURE__*/_react.default.createElement("li", null, "\uD83E\uDDD4\uD83C\uDFFFAdd")), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/cart"
-  }, /*#__PURE__*/_react.default.createElement("li", null, "Cart"))))));
+  }, /*#__PURE__*/_react.default.createElement("li", null, "\uD83D\uDED2Cart"))))));
 }
 
 var _default = header;
@@ -34164,7 +34176,7 @@ function Cart() {
   });
   return /*#__PURE__*/_react.default.createElement("main", {
     className: "cart-page"
-  }, /*#__PURE__*/_react.default.createElement("h1", null, "Check out"), cartItemElements, /*#__PURE__*/_react.default.createElement("p", {
+  }, cartItemElements, /*#__PURE__*/_react.default.createElement("p", {
     className: "total-cost"
   }, " total : ", totalCoast, " "), /*#__PURE__*/_react.default.createElement("div", {
     className: "order-button"
@@ -34240,7 +34252,9 @@ function AddComponent() {
       price: price.value,
       style: style.value,
       lyrics: lyrics.value,
-      isFavorite: false,
+      isFavorite: true,
+      like: '',
+      unlike: '',
       id: Date.now()
     };
     setAllSong([].concat(_toConsumableArray(allSong), [newListSong]));
@@ -34248,7 +34262,7 @@ function AddComponent() {
 
   return /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: AddNewSong
-  }, /*#__PURE__*/_react.default.createElement("input", {
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("input", {
     name: "title",
     type: "text",
     value: newSong.title
@@ -34271,7 +34285,7 @@ function AddComponent() {
     name: "lyrics",
     placeholder: "Lyrics",
     value: newSong.lyrics
-  }), /*#__PURE__*/_react.default.createElement("button", null, "Add"));
+  })), /*#__PURE__*/_react.default.createElement("button", null, "Add"));
 }
 
 var _default = AddComponent;
@@ -34368,12 +34382,16 @@ function PopularSong(_ref) {
   var song = _ref.song;
 
   var _useContext = (0, _react.useContext)(_Context.Context),
-      allSong = _useContext.allSong;
+      allSong = _useContext.allSong,
+      favoriteSong = _useContext.favoriteSong;
 
   var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       hover = _useState2[0],
       setHover = _useState2[1];
+
+  var _useContext2 = (0, _react.useContext)(_Context.Context),
+      ShowLyrucs = _useContext2.ShowLyrucs;
 
   var _useState3 = (0, _react.useState)(song.like),
       _useState4 = _slicedToArray(_useState3, 2),
@@ -34385,15 +34403,11 @@ function PopularSong(_ref) {
       unlkiesong = _useState6[0],
       setUnlikeSong = _useState6[1];
 
-  var _useContext2 = (0, _react.useContext)(_Context.Context),
-      ShowLyrucs = _useContext2.ShowLyrucs;
-
   var IncrementLikes = function IncrementLikes(id) {
     console.log(allSong);
     var addLike = allSong.find(function (newId) {
-      return newId.id === id;
+      return newId.id == id;
     });
-    console.log(addLike);
     var incrementLike = addLike.like++;
     setLikeSong(incrementLike);
   };
@@ -34401,10 +34415,9 @@ function PopularSong(_ref) {
   var decrementLikes = function decrementLikes(id) {
     console.log(allSong);
     var addLike = allSong.find(function (newId) {
-      return newId.id === id;
+      return newId.id == id;
     });
-    console.log(addLike);
-    var incrementLike = addLike.like--;
+    var incrementLike = addLike.unlike--;
     setUnlikeSong(incrementLike);
   };
 
@@ -34415,16 +34428,23 @@ function PopularSong(_ref) {
 
   var CartIcon = function CartIcon() {};
 
+  console.log(song);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "popular-song"
-  }, /*#__PURE__*/_react.default.createElement("button", null, /*#__PURE__*/_react.default.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    onClick: function onClick() {
+      return favoriteSong(song.id);
+    }
+  }, song.isFavorite ? /*#__PURE__*/_react.default.createElement("button", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _lineHeart.default
-  })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, song.title), /*#__PURE__*/_react.default.createElement("p", null, song.name)), /*#__PURE__*/_react.default.createElement("button", null, song.like, /*#__PURE__*/_react.default.createElement("img", {
+  })) : /*#__PURE__*/_react.default.createElement("img", {
+    src: _fillHeart.default
+  })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, song.title), /*#__PURE__*/_react.default.createElement("p", null, song.name)), /*#__PURE__*/_react.default.createElement("button", null, likeSong, /*#__PURE__*/_react.default.createElement("img", {
     src: _arrowUp.default,
     onClick: function onClick() {
       return IncrementLikes(song.id);
     }
-  }), likeSong), /*#__PURE__*/_react.default.createElement("button", null, song.unlike, " ", /*#__PURE__*/_react.default.createElement("img", {
+  })), /*#__PURE__*/_react.default.createElement("button", null, unlkiesong, /*#__PURE__*/_react.default.createElement("img", {
     src: _downArrow.default,
     onClick: function onClick() {
       return decrementLikes(song.id);
@@ -34476,10 +34496,16 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function popular() {
+  function sortSongsByPopularity(songA, songB) {
+    var ratioA = songA.like - songA.unlike;
+    var ratioB = songB.like - songB.unlike;
+    return ratioB - ratioA;
+  }
+
   var _useContext = (0, _react.useContext)(_Context.Context),
       allSong = _useContext.allSong;
 
-  return /*#__PURE__*/_react.default.createElement("div", null, allSong.map(function (song) {
+  return /*#__PURE__*/_react.default.createElement("div", null, allSong.sort(sortSongsByPopularity).map(function (song) {
     return /*#__PURE__*/_react.default.createElement(_PopularSong.default, {
       key: song.id,
       song: song
@@ -34527,9 +34553,9 @@ function styleName() {
       onClick: function onClick() {
         return ShowLyrucs(song);
       }
-    }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h2", null, song.title), /*#__PURE__*/_react.default.createElement("p", null, song.name))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-      to: "/"
-    }, /*#__PURE__*/_react.default.createElement("button", null, "Back")));
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      className: "songLyrics"
+    }, /*#__PURE__*/_react.default.createElement("h2", null, song.title), /*#__PURE__*/_react.default.createElement("p", null, song.name))));
   }));
 }
 
@@ -34567,7 +34593,9 @@ function StyleComponent(_ref) {
     return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
       to: "/styleName/".concat(style),
       key: id
-    }, /*#__PURE__*/_react.default.createElement("p", null, style));
+    }, /*#__PURE__*/_react.default.createElement("p", {
+      className: "style"
+    }, " \uD83C\uDFA7", style));
   }));
 }
 
@@ -34642,7 +34670,7 @@ function LyrucsComponent(_ref) {
   var lyrics = _ref.lyrics;
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "Lyrics"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, lyrics.title), /*#__PURE__*/_react.default.createElement("p", null, lyrics.lyrics), /*#__PURE__*/_react.default.createElement("p", null, lyrics.name));
+  }, /*#__PURE__*/_react.default.createElement("h2", null, lyrics.title), /*#__PURE__*/_react.default.createElement("pre", null, /*#__PURE__*/_react.default.createElement("p", null, lyrics.lyrics)), /*#__PURE__*/_react.default.createElement("p", null, lyrics.name));
 }
 
 var _default = LyrucsComponent;
@@ -34772,7 +34800,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59892" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55926" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

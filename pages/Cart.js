@@ -22,7 +22,6 @@ function Cart() {
 	const totalCoast = total.toLocaleString("en-US", {style: "currency", currency: "USD"}) 
 	return (
 		<main className="cart-page">
-			<h1>Check out</h1>
 			{cartItemElements}
 			<p className ="total-cost"> total : {totalCoast} </p>
 			<div className="order-button">

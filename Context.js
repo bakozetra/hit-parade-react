@@ -8,6 +8,13 @@ function ContextProvider(props) {
   const [songLyrics, setSongLyrics] = useState({});
   const [songStyle, setSongStyle] = useState([])
  
+  useEffect(() => {
+    const lsSongs = JSON.parse(localStorage.getItem('allSong'));
+    lsSongs ? setAllSong(lsSongs) : setAllSong(Song)
+  } ,[])
+  useEffect (() => {
+    localStorage.setItem('allSong' , JSON.stringify(allSong))
+  } ,[allSong])
 
   function getSong() {
     setAllSong(Song);
@@ -23,28 +30,29 @@ function ContextProvider(props) {
   function StyleSong(song) {
     setSongStyle(prevItem => [...songStyle, song]);
   }
- function inCrement (id) {
-    const increment = allSong.find(lke => like.id === id);
-    (prevItem => [])
- }
-  function toggleLyrucs(id) {
-    const ArrayLyrucs = allSong.map(song => {
-      if (song.id === id) {
+
+  function favoriteSong (songId) {
+    const ArrayLyrucs = allSong.map(newSong => {
+      if (newSong.id === songId) {
         return {
-          ...song,
-          isFavorite: !song.isFavorite,
+          ...newSong,
+          isFavorite: !newSong.isFavorite,
         }
-        return song
       }
+      return newSong
     })
     setAllSong(ArrayLyrucs);
+    console.log(songId);
+  
   }
+
   function filterSong(song) {
     setAllSong(prevItem => prevItem.filter(item => item.style === song))
   }
   function removeFromCard(imgId) {
     setCartItems(preveItems => preveItems.filter(item => item.id !== imgId))
   }
+  
 
   console.log(songLyrics);
 
@@ -54,8 +62,9 @@ function ContextProvider(props) {
   useEffect(() => {
     getSong()
   }, [])
+ 
   return (
-    <Context.Provider value={{ allSong, toggleLyrucs, addToCart, cartItems, songLyrics, emptyCart, removeFromCard, ShowLyrucs, filterSong, StyleSong, setAllSong }}>
+    <Context.Provider value={{ allSong, addToCart, cartItems, songLyrics, emptyCart, removeFromCard, ShowLyrucs, filterSong, StyleSong, setAllSong , favoriteSong }}>
       {props.children}
     </Context.Provider>
   )

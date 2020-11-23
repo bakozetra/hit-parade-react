@@ -17,7 +17,9 @@ function AddComponent() {
       price:price.value,
       style: style.value,
       lyrics: lyrics.value,
-      isFavorite: false,
+      isFavorite : true,
+      like : '',
+      unlike : '',
       id: Date.now(),
     }
     setAllSong([...allSong, newListSong])
@@ -25,6 +27,7 @@ function AddComponent() {
   
   return (
     <form  onSubmit={AddNewSong}>
+      <div>
       <input
         name="title"
         type="text"
@@ -53,6 +56,7 @@ function AddComponent() {
         placeholder="Lyrics"
         value={newSong.lyrics}
       />
+      </div>
       <button>Add</button>
     </form>
   )

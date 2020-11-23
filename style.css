@@ -1,24 +1,35 @@
+body {
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr);
+}
 ul {
   display: flex;
+  padding: 0;
 }
 li {
   list-style: none;
   padding-right: 2rem;
   text-decoration: none;
 }
+li a {
+  width: 2rem;
+}
 a {
   text-decoration: none;
 }
-
+#root {
+  grid-column: 2;
+  width: 100%;
+}
 .popular-song {
   display: flex;
-  width: 860px;
    height: 100px;
    max-width: 100%;
    background: #272343;
    margin-bottom: 1rem;
-   color: white;
+   color: white;  
    justify-content: space-between;
+   align-items: center;
 
 }
 button {
@@ -29,8 +40,77 @@ button {
 }
 form {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  
 }
 form input {
   margin-bottom: 1rem;
+}
+.Lyrics {
+  background: #272343;
+  max-width: 100%;
+  color: white;
+}
+.songLyrics {
+  background: #272343;
+  color: white;
+  max-width: 100%;
+
+}
+.cart-page {
+  color: white;
+}
+.cart-item {
+  background: #272343;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.total-cost {
+  color: black;
+}
+.menu {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between  ;
+}
+.style {
+  font-size: 2rem;
+}
+input {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  width: 300px;
+  border: none;
+  outline: none;
+}
+textarea {
+ height: 100px;
+
+}
+input , textarea{
+  background-color: #BAE8E8;
+  border: #BAE8E8;
+ 
+}
+form div {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+}
+form button {
+  width: 75px;
+  height: 50px;
+  color:#272343 ;
+  background-color: #FFD803;
+  border-radius: 10px;
+  outline: none;
+  
+}
+input:hover {
+   background-color: blue;
+  ;
 }

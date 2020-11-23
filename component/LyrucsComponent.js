@@ -4,7 +4,7 @@ function LyrucsComponent({lyrics}) {
   return (
     <div className="Lyrics">
       <h2>{lyrics.title}</h2>
-      <p>{lyrics.lyrics}</p>
+      <pre><p>{lyrics.lyrics}</p></pre>
       <p>{lyrics.name}</p>
     </div>
   )
